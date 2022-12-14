@@ -46,10 +46,13 @@ exports.signup = async function (req,res){
     let email=req.body.email;
     let password = req.body.password;
     let name = req.body.name;
+    let path=req.path+"/"+req.file.filename;
+    console.log(path)
     let newUser = new User({
         name,
         email,
-        password
+        password,
+        path
     })
     await newUser.save();
     return res.status(200).json({

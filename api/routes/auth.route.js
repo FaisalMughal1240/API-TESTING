@@ -8,5 +8,5 @@ router.post('/login',auth.login);
 router.post('/user',auth.user);
 router.get('/users',auth.users);
 router.post('/upload-file', uploadfile.single('profile'), auth.upload);
-router.post('/signup', auth.signup);
+router.post('/signup',uploadfile.single('profile'), auth.signup);
 module.exports = router;

@@ -12,6 +12,9 @@ var User = new Schema({
     password:{
         type:String,
         require:true,
+    },
+    path:{
+        type:String
     }
 });
 var Model = mongoose.model('User', User);
